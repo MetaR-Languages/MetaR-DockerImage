@@ -2,6 +2,13 @@ FROM rocker/verse:3.4.3
 
 MAINTAINER Manuele Simi "mas2182@med.cornell.edu"
 
+LABEL org.opencontainers.image.source='https://github.com/MetaR-Languages/MetaR-DockerImage' \
+	Description='MetaR DockerImage' \
+	Vendor='Clinical and Translational Science Center at Weill Cornell Medicine' \
+	maintainer='Manuele Simi <mas2182@med.cornell.edu>' \
+	base_image='rocker/verse' \
+	base_image_version='3.4.3'
+
 ## Refresh package list and upgrade
 ## Remain current
 
