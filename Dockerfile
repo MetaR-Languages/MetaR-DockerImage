@@ -19,7 +19,7 @@ RUN echo "deb-src http://ftp.us.debian.org/debian jessie main" >> /etc/apt/sourc
 
 RUN apt-get update
 
-RUN apt-get -y install python-software-properties
+RUN apt-get -y --allow-unauthenticated install python-software-properties
 
 RUN useradd docker \
 	&& mkdir /home/docker \
@@ -27,7 +27,7 @@ RUN useradd docker \
 	&& addgroup docker staff
 RUN Rscript -e 'R.Version()'
 
-RUN apt-get -y install libhdf5-dev
+RUN apt-get -y --allow-unauthenticated install libhdf5-dev
 
 RUN  Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite("edgeR", ask=FALSE);  biocLite("limma", ask=FALSE); ' \
  	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds 
